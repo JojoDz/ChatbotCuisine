@@ -73,6 +73,68 @@
         "Sortir la galette et la mettre de côté dans une assiette",
         "Recommencer la cuisson tant qu'il reste de la pâte : voilà une pile de galettes à réchauffer avec un remplissage au choix"
       ],
-      "related_recipes": []
+      "related_recipes": [
+        5
+      ]
+    },
+    {
+      "recipe_id": 4,
+      "recipe_type": "Dessert",
+      "recipe_name": "Crumble à la pomme",
+      "ingredients": {
+        "Pommes": "8",
+        "Sucre roux": "50 g",
+        "Farine complète": "90 g",
+        "Purée de cacahuète": "100 g",
+        "Vanille en poudre": "5 ml"
+      },
+      "allergens": ["cacahuète"],
+      "diet": ["végétarien", "végane",],
+      "steps": [
+        "Préchauffer le four à 180°.",
+        "Peler les pommes.",
+        "Couper-les en petits morceaux et placez-les dans un plat.",
+        "Mélanger le sucre, la farine et la vanille en poudre.",
+        "Ajouter la purée de cacahuète.",
+        "Malaxer le tout avec les doigts pour obtenir une pâte sableuse.",
+        "Rajouter cette pâte au dessus des pommes pelées et coupées.",
+        "Faire cuire environ 20 min jusqu'à ce que la pâte soit bien dorée."
+      ],
+      "related_recipes":[
+        1, 2
+      ]
+    },
+    {
+      "recipe_id": 5,
+      "recipe_type": "Plat",
+      "recipe_name": "Quiche d'aubergine au fromage de chèvre",
+      "ingredients": {
+        "Pâte feuilletée": "1",
+        "Ravier de chèvre": "1",
+        "Gousses d'ail": "2",
+        "Aubergine": "1",
+        "Tomates": "2",
+        "Origan": "1 cs.",
+        "Herbes de Provence": "1 cs.",
+        "Gruyère râpé": "100g",
+        "Huile d'olive": "2 cs."
+      },
+      "allergens": [],
+      "diet": ["végétarien"],
+      "steps": [
+        "Préchauffer le four à 180°C",
+        "Laver l'aubergine et découper-la en rondelles de 0,3 mm d'épaisseur.",
+        "Laver les tomates, découper-les en rondelles fines",
+        "Eplucher les gousses d'ail et couper-les en petits morceaux.",
+        "Faire chauffer l'huile d'olive dans une poêle et y faire revenir les rondelles d'aubergine.",
+        "Eponger les rondelles avec du papier essuie-tout.",
+        "Préparer un plat à quiche, y étalez la pâte, tapir le fond avec le fromage de chèvre.",
+        "Disposer par-dessus les rondelles d'aubergine puis les rondelles de tomates.",
+        "Saupoudrer le tout d'ail, d'herbes de Provence, de gruyère râpé et d'origan.",
+        "Mettre au four pendant 20 min mais surveillez la cuisson car dès que la quiche prend une couleur bien dorée, sortez-la."
+      ],
+      "related_recipes":[
+        3
+      ]
     }
   ]
