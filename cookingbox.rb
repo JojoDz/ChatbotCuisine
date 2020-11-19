@@ -8,52 +8,38 @@ data_hash = JSON.parse(file)
         puts "C'est quoi ton petit nom ?"
         prenom = gets.chomp
         #variable pour récupérer le prénom que l'utilisatrice aura saisi
-        puts "Bienvenu(e) #{prenom}, une petite faim ? ça tombe bien, voici quelques recettes : "
+        puts "Bienvenu(e) #{prenom}, une petite faim ? Quel ingredient as-tu sous la main ? ;-) "
         #{prenom} : sera remplacé par le prénom de l'utilisatrice
-    # affichage des 3 recettes 
-    data_hash.each do |recette|
-        puts "#{recette["recipe_id"]} - #{recette["recipe_name"]}"
-    end
+        ingredients = gets.chomp
+        #l'utilisatrice rentre les ingredients dont elle dispose
 
-    puts "Inscris le numéro de la recette qui t'intéresse :"
-    user_choice = gets.chomp
+        ingredientList = ingredients.split(",").map(&:downcase)
+        #pour transformer le tableau d'ingredients en minuscules
 
-    recettechoice = user_choice
-        
-    recetteinput = data_hash.each do |recette|
-        puts "#{recette["recipe_id"]} - #{recette["recipe_name"]} - #{recette["steps"]}"
-    end
+        expectedIngredients = ingredientList.length()
+        #pour compter tous les elements du tableau
 
-   if user_choice == recettechoice
-        puts recetteinput
-    end
-    # if user_choice == 2
-    #     puts data_hash[1]
-    # end
-    # if user_choice == 3
-    #     puts data_hash[2]
-    # end
+        puts "Voici les recettes que tu peux faire ! "
+        data_hash.each_with_index do |recipe, index|
+        #boucle pour chaque recette du JSON afin de mettre un index en argument
+          counter = 0
+        #permet d'initialiser la variable
+            ingredientList.each do |ingredients|
+              eachIngredient = recipe["ingredients"].keys.map(&:downcase)
+        #pour chaque ingredient aller chercher dans JSON les cles correspondantes
+          if eachIngredient.include?(ingredients) then
+          counter += 1
+          #si notre tableau comprend bien un des ingredients alors on ajoute 1 au compteur
+          end
+        end
+         if expectedIngredients <= counter then
+           puts index.to_s + " #{recipe["recipe_name"]}"
+          end
+        end
+            puts " Je suis un peu dur d'oreille, peux-tu inscrire le numero de la recette que tu souhaites ?"
+            chosenNumber = gets.chomp
+            puts "Tu as choisi la recette : #{data_hash[chosenNumber.to_i]["recipe_name"]}"
+            puts data_hash[chosenNumber.to_i]["ingredients"]
+            puts data_hash[chosenNumber.to_i]["steps"]
 
-
-
-# afficher les 3 recettes
-# l'utilisatrice choisit une de ses recettes
-
-#imprimer toute la première recette dans le fichier json sur une même ligne: 
-#print data_hash[0]
-
-# #création d'une variable  pour première recette
-# recette = data_hash[0]
-# #print à l'écran le nom de la première recette
-# puts recette["recipe_name"]
-
-#version + rapide et directe : 
-# puts data_hash[0]["recipe_name"]
-
-
-#message erreur si pas choisi de recette 
-# user_choice = gets.chomp
-# while not user_choice == recette1 || recette2 || recette3 do
-#     puts "N'oublie pas de choisir une recette ;-)"
-#     user_choice = gets.chomp
-# puts "Tu as choisi" + user_choice
+          #afficher la recette souhaite a partir du document JSON

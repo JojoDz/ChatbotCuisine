@@ -1,0 +1,82 @@
+=begin
+
+    user_choice = gets.chomp
+
+    recettechoice = user_choice
+
+    recetteinput = data_hash.each do |recette|
+        puts "#{recette["recipe_id"]} - #{recette["recipe_name"]} - #{recette["steps"]}"
+    end
+
+   if user_choice == recettechoice
+        puts recetteinput
+    end
+
+    # if user_choice == 2
+    #     puts data_hash[1]
+    # end
+    # if user_choice == 3
+    #     puts data_hash[2]
+    # end
+
+# afficher les 3 recettes
+# l'utilisatrice choisit une de ses recettes
+
+#imprimer toute la première recette dans le fichier json sur une même ligne:
+#print data_hash[0]
+
+# #création d'une variable  pour première recette
+# recette = data_hash[0]
+# #print à l'écran le nom de la première recette
+# puts recette["recipe_name"]
+
+#version + rapide et directe :
+# puts data_hash[0]["recipe_name"]
+
+
+#message erreur si pas choisi de recette
+# user_choice = gets.chomp
+# while not user_choice == recette1 || recette2 || recette3 do
+#     puts "N'oublie pas de choisir une recette ;-)"
+#     user_choice = gets.chomp
+# puts "Tu as choisi" + user_choice
+=end
+------------------------------
+=begin class Recettes
+      attr_accessor :recipe_id, :recipe_name, :steps
+
+      def Recettes_info
+        "#{name["recipe_id"]} - #{recette["recipe_name"]} - #{recette["steps"]}"
+        end
+    end
+  =end
+
+---------------
+# affichage des 3 recettes
+data_hash.each do |recette|
+    puts "#{recette["recipe_id"]} - #{recette["recipe_name"]}"
+end
+
+
+  puts "Inscris le numéro de la recette qui t'intéresse :"
+  user_choice = gets.chomp
+
+
+
+---------------------------
+
+#inspiration groupes
+
+file = JSON.load(URI.open('https://raw.githubusercontent.com/adatechschool/Projets/master/robot_de_conversation/recipes.json'))
+#aller chercher le json sur github
+ingredientList = ingredients.split(",").map(&:downcase)
+#methode
+expectedIngredients = ingredientList.length()
+normalizedArray = recipe["ingredients"].keys.map(&:downcase)
+
+---------------------------
+#Indications Adrien
+#eachwithindex
+#parcours chaque case du json, chaque recette donc ajouter un each
+#pour ne pas oublier la recette = stocker l'id de la recette
+#tableau s'appellera resultats ou objet {nom de la recette correspondante}
